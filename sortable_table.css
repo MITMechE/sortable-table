@@ -1,0 +1,43 @@
+/*
+ * Styles for sortable table script by Zachary Yaro <zmyaro@mit.edu>.
+ */
+
+.sortable-heading {
+	cursor: pointer;
+
+	position: relative;
+	padding-right: 1.75em;
+}
+	.sortable-heading::after {
+		content: '\2b9d';
+		content: '\2b9d' / ''; /* Not every browser/version supports `content` alt text. */
+		position: absolute;
+		display: flex;
+		align-items: center;
+		right: 0.5em;
+		top: 0;
+		bottom: 0;
+
+		visibility: hidden;
+		opacity: 0.3;
+	}
+		.sortable-heading:hover::after,
+		.sortable-heading:focus::after {
+			visibility: visible;
+		}
+		.sortable-heading:active::after {
+			opacity: 0.7;
+		}
+
+.sorted-heading::after {
+	visibility: visible;
+	opacity: 1;
+}
+	.sorted-heading[aria-sort="ascending"]::after {
+		content: '\2b9d';
+		content: '\2b9d' / '';
+	}
+	.sorted-heading[aria-sort="descending"]::after {
+		content: '\2b9f';
+		content: '\2b9f' / '';
+	}
