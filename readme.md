@@ -4,7 +4,7 @@ Written by Zachary Yaro <zmyaro@mit.edu>.
 
 ## Making a table sortable
 
-To make a table sortable, call `new SortableTable(myTable)` where `myTable` is an `HTMLTableElement`.  For example:
+To make a table sortable, call `new SortableTable(table)` where `table` is any `HTMLTableElement`.  For example:
 ```
 <head>
 	⋮
@@ -19,6 +19,8 @@ To make a table sortable, call `new SortableTable(myTable)` where `myTable` is a
 ```
 
 The script assumes your `<table>` has its column headings in `<th>`s in a `<thead>`, followed by the sortable rows to in a `<tbody>`.
+
+The script adds the appropriate `aria-sort` attributes to sortable headings, and `sortable_table.css` contains the styles to append ⮝/⮟ arrows to the headings.
 
 
 ## Custom sort value
